@@ -1,0 +1,68 @@
+.todo-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    &.stared{
+      background-color: $lighten-warning;
+    }
+    &.active{
+      box-shadow: 0 4px 4px rgba(black, .25)
+    }
+    & + .todo-item {
+      margin-top: 24px;
+    }
+  
+    // 第二層容器
+    .todo-header {
+      display: flex;
+      padding: 24px 32px 15px 32px;
+    }
+    .todo-body {
+      padding: 24px 72px 24px 72px;
+      border-top: 2px solid $gray-500;
+    }
+    .todo-footer {
+      padding: 0 32px 24px 72px;
+    }
+  
+    // header
+    .todo-title {
+      flex: 1;
+      font-size: 1.5rem;
+    }
+    .todo-control {
+      font-size: 1.5rem;
+    }
+    .todo-check {
+      // $checkbox-size: 24px;
+      width: 40px;
+    }
+    // todo-content
+    .todo-row {
+      display: flex;
+      & + .todo-row {
+        margin-top: 24px;
+      }
+    }
+    .todo-icon {
+      width: 24px;
+    }
+    .todo-form-control {
+      flex: 1;
+    }
+  
+    //controller
+    .handle{
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      opacity: 0;
+      cursor: move;
+    }
+    &:hover .handle{
+      opacity: 1;
+    }
+  }

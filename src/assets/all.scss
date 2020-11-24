@@ -1,0 +1,13 @@
+@import 'bootstrap/scss/_functions.scss';
+@import './helpers/variables.scss';
+@import 'bootstrap/scss/bootstrap.scss';
+
+@import './todo-nav.scss';
+@import './todo-item';
+
+body{
+    background-color: #E1E1E1;
+}
+.completed{
+    text-decoration: line-through;
+}
