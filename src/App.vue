@@ -1,5 +1,3 @@
-/* eslint-disable vue/no-use-v-if-with-v-for */
-/* eslint-disable */
 <template>
   <div id="app">
     <div class="bg-primary">
@@ -119,12 +117,12 @@ export default {
         });
     },
     dragItem() {
-      console.log(this.cacheTodo);
+      // console.log(this.cacheTodo);
       const vm = this;
       const api = 'http://localhost:3000/sort';
       const sort = vm.todos.map((item) => item.id);
-      vm.$http.post(api, { sort }).then((response) => {
-        console.log(response);
+      vm.$http.post(api, { sort }).then(() => {
+        // console.log(response);
       });
     },
     editTodo(id) {
@@ -140,7 +138,7 @@ export default {
         return vm.todos;
       }
       const data = vm.todos.filter((item) => item.completed === vm.currentTab);
-      console.log(vm.currentTab);
+      // console.log(vm.currentTab);
       return data;
     },
 

@@ -34,7 +34,8 @@
         <span v-if="todo.startDate">from: {{ todo.startDate }}</span>
         <span v-if="todo.startDate && todo.endDate"> ~ </span>
         <span v-if="todo.endDate">to: {{ todo.endDate }} </span>
-        <i class="far fa-comment-dots ml-3" v-if="todo.comment >0">{{todo.comment.length}}</i>
+        <i class="far fa-comment-dots ml-3"
+        v-if="todo.comment.length >0">{{todo.comment.length}}</i>
       </div>
     </div>
   </div>
@@ -52,8 +53,8 @@ export default {
         ...vm.todo,
       };
       todo[field] = state;
-      vm.$http.put(api, todo).then((response) => {
-        console.log(response);
+      vm.$http.put(api, todo).then(() => {
+        // console.log(response);
         vm.$emit('getData');
       });
     },

@@ -63,13 +63,13 @@ export default {
   },
   methods: {
     updateTodo() {
-      console.log(this.cacheTodo);
+      // console.log(this.cacheTodo);
       const vm = this;
       const todo = {
         ...vm.cacheTodo,
       };
       if (!vm.cacheTodo.message) {
-        alert('請輸入訊息');
+        // alert('請輸入訊息');
         return;
       }
       if (vm.isNew) {
@@ -77,7 +77,7 @@ export default {
         todo.timestamp = Math.floor(Date.now() / 1000);
         todo.stared = false;
         todo.completed = 'progress';
-        todo.comment = [];
+        // todo.comments = [];
         vm.$http.post(api, todo).then(() => {
           vm.$emit('closeEdit');
           vm.$emit('getData');
@@ -99,7 +99,7 @@ export default {
       const todo = {
         ...vm.todo,
       };
-      todo.comment.push(vm.comment);
+      todo.comments.push(vm.comment);
       vm.$http.put(api, todo).then(() => {
         vm.comment = '';
         vm.$emit('getData');

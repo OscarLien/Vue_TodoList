@@ -20,5 +20,9 @@ npm run build
 npm run lint
 ```
 
+### JSON Server
+json-server --watch todo.json
+
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
